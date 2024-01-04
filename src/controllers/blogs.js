@@ -62,7 +62,7 @@ const editBlog = async(req,res)=>{
 const getAllBlogs = async(req,res)=>{
     try {
         let blogs = await blogModel.find({},{_id:1,title:1,description:1,createdAt:1,
-            firstName:1}).sort({createdAt:0})
+            firstName:1}).sort({createdAt:1})
         res.status(200).send({
             message:"Blogs Fetched Successfully",
             blogs
